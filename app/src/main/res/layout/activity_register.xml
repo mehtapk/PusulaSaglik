@@ -1,89 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center_horizontal"
-    android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mehtap.pusula.RegisterActivity">
 
-    <ProgressBar android:id="@+id/register_progress" style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" android:visibility="gone" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Ad Soyad" />
 
-    <ScrollView android:id="@+id/register_form" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="false">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etUsername"
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etName"
+        android:layout_alignEnd="@+id/etName"
+        android:hint="Kullanıcı Adı" />
 
-        <LinearLayout android:id="@+id/user_register_form" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:orientation="vertical"
-            android:weightSum="1">
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/reg_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="İsim Soyisim"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-            </android.support.design.widget.TextInputLayout>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etPassword"
+        android:layout_below="@+id/etUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etUsername"
+        android:layout_alignEnd="@+id/etUsername"
+        android:hint="Şifre" />
 
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/etAge"
+        android:hint="Yaş"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-                <EditText android:id="@+id/reg_email" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress" android:maxLines="1"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText android:id="@+id/reg_password" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:hint="Şifre"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified" android:inputType="textPassword"
-                    android:maxLines="1" android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/reg_confirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tekrar Şifre"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:layout_gravity="center_horizontal" />
-            </android.support.design.widget.TextInputLayout>
-            
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cinsiyet"
-                android:entries="@array/cinsiyet_names">
-            </Spinner>
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/yas"
-                android:entries="@array/yas_names">
-            </Spinner>
-
-            <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" android:text="KAYDOL"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KAYDOL"
+        android:id="@+id/bRegister"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
